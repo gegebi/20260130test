@@ -59,12 +59,44 @@ function displayResults(results) {
                 <tr>
                     <td>${res.year}년</td>
                     <td>${res.totalContribution.toLocaleString('ko-KR')}만원</td>
-                    <td>${res.totalInterest.toLocaleString('ko-KR')}만원</td>
-                    <td><strong>${res.finalBalance.toLocaleString('ko-KR')}만원</strong></td>
+                <td>${res.totalInterest.toLocaleString('ko-KR')}만원</td>
+                <td><strong>${res.finalBalance.toLocaleString('ko-KR')}만원</strong></td>
                 </tr>
             `).join('')}
         </tbody>
     `;
 
     container.appendChild(table);
+}
+
+// Partnership form logic
+const openFormBtn = document.getElementById('open-partnership-form-btn');
+const closeFormBtn = document.getElementById('close-partnership-form-btn');
+const partnershipFormSection = document.getElementById('partnership-form-section');
+
+if (openFormBtn && partnershipFormSection) {
+    openFormBtn.addEventListener('click', function() {
+        partnershipFormSection.classList.remove('hidden-form-section');
+        openFormBtn.style.display = 'none'; // Hide the open button when form is visible
+    });
+}
+
+if (closeFormBtn && partnershipFormSection) {
+    closeFormBtn.addEventListener('click', function() {
+        partnershipFormSection.classList.add('hidden-form-section');
+        openFormBtn.style.display = 'block'; // Show the open button when form is hidden
+    });
+}
+
+// Optional: Add a simple confirmation for Formspree submission
+const formspreeForm = document.querySelector('#partnership-form-section form');
+if (formspreeForm) {
+    formspreeForm.addEventListener('submit', function(event) {
+        // Formspree handles the actual submission, just provide user feedback
+        alert('문의가 성공적으로 전송되었습니다!');
+        // Optionally hide the form after submission
+        partnershipFormSection.classList.add('hidden-form-section');
+        openFormBtn.style.display = 'block';
+        formspreeForm.reset(); // Clear form fields
+    });
 }

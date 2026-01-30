@@ -107,3 +107,58 @@ tbody tr:last-child td {
 tbody tr:nth-child(even) {
     background-color: #f8fcfb;
 }
+
+/* Styles for Partnership Form */
+.partnership-btn {
+    margin-top: 30px;
+    background-color: #cccccc; /* Light gray */
+}
+
+.partnership-btn:hover {
+    background-color: #bbbbbb; /* Slightly darker gray on hover */
+}
+
+#partnership-form-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+#partnership-form-section h2 {
+    text-align: center;
+    color: #1e8449;
+    margin-bottom: 25px;
+}
+
+#partnership-form-section .input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+#partnership-form-section .input-group textarea:focus {
+    outline: none;
+    border-color: #27ae60;
+}
+
+#partnership-form-section form button[type="submit"] {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.hidden-form-section {
+    display: none;
+}
+
+.close-btn {
+    background-color: #95a5a6; /* A neutral color for close button */
+}
+
+.close-btn:hover {
+    background-color: #7f8c8d;
+}

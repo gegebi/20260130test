@@ -31,6 +31,28 @@
         <div id="result-container">
             <!-- 결과 테이블이 여기에 표시됩니다. -->
         </div>
+
+        <button id="open-partnership-form-btn" class="partnership-btn">제휴문의하기</button>
+
+        <div id="partnership-form-section" class="hidden-form-section">
+            <h2>제휴 문의</h2>
+            <form action="https://formspree.io/f/mzdgankb" method="POST">
+                <div class="input-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="이름" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="이메일" required>
+                </div>
+                <div class="input-group">
+                    <label for="message">메시지</label>
+                    <textarea id="message" name="메시지" rows="5" required></textarea>
+                </div>
+                <button type="submit">문의 보내기</button>
+                <button type="button" id="close-partnership-form-btn" class="close-btn">닫기</button>
+            </form>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>

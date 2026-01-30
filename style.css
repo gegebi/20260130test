@@ -1,1 +1,40 @@
-/* Add styles here */
+:root {
+    --background-color: #f0f2f5;
+    --text-color: #1c1e21;
+    --primary-color: #0866ff;
+    --card-background: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --noise-texture: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.02"/></svg>');
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-image: var(--noise-texture);
+}
+
+header, footer {
+    text-align: center;
+    opacity: 0.8;
+}
+
+main {
+    display: grid;
+    gap: 20px;
+}
+
+/* The component will have its own encapsulated styles, but we can style it from the outside too */
+simple-greeting {
+    display: block;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 12px 28px 0 var(--shadow-color), 0 2px 4px 0 var(--shadow-color);
+    padding: 24px;
+    text-align: center;
+}
